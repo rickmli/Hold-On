@@ -8,12 +8,20 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "@reduxjs/toolkit": "^2.6.1",
+    "@tailwindcss/vite": "^4.0.14",
+    "@tanstack/react-query": "^5.69.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.3.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.14",
     "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^3.0.0",
-    "vite-plugin-react": "^1.0.0"
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.14",
+    "vite": "^6.2.2"
   }
 }
