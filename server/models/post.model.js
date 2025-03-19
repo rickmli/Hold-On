@@ -1,13 +1,8 @@
 import { defaultArticleImage } from "../utils/constants";
-
 import mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema(
   {
-    userId: {
-      type: String,
-      required: true,
-    },
     title: {
       type: String,
       required: true,
@@ -21,14 +16,35 @@ const postSchema = new mongoose.Schema(
       type: String,
       default: defaultArticleImage,
     },
-    category: {
+    tags: [
+      {
+        type: String,
+        default: "untagged",
+      },
+    ],
+    status: {
       type: String,
-      default: "uncategorized",
+      default: "published",
     },
     slug: {
       type: String,
       required: true,
       unique: true,
+    },
+    comments: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Comment",
+        default: [],
+      },
+    ],
+    likes: {
+      type: Number,
+      default: 0,
+    },
+    views: {
+      type: Number,
+      default: 0,
     },
   },
   { timestamps: true }
