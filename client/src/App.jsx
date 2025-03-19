@@ -19,7 +19,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/post" element={<PostListPage />} />
           <Route path="/post/:postSlug" element={<PostDetailPage />} />
-          <Route path="/tags" element={<TagListPage />} />{" "}
+          <Route path="/tag" element={<TagListPage />} />{" "}
           <Route path="/tag/:tagName" element={<TagDetailPage />} />{" "}
           <Route path="/archives" element={<ArchivesPage />} />{" "}
           <Route path="/search" element={<Search />} />
