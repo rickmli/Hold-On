@@ -1,5 +1,7 @@
+import PostList from "../features/posts/PostList";
+
 function PostListPage() {
-  return <div>PostListPage</div>;
+  return <PostList />;
 }
 
 export default PostListPage;

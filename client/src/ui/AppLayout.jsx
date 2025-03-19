@@ -4,13 +4,15 @@ import Header from "./Header";
 
 function AppLayout() {
   return (
-    <div>
+    <>
       <Header />
-      <main>
-        <Outlet />
-      </main>
-      <footer>Footer</footer>
-    </div>
+      <div className="container mx-auto max-w-1/2">
+        <main>
+          <Outlet />
+        </main>
+        <footer>Footer</footer>
+      </div>
+    </>
   );
 }
 

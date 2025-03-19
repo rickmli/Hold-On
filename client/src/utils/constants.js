@@ -1,5 +1,1 @@
-const NavRoutes = {
-  posts: "/post",
-  tags: "/tag",
-  about: "/about",
-};
+const PORT = "http://localhost:5001";
