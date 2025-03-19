@@ -1,21 +1,11 @@
-const express = require('express');
-const exampleController = require('../controllers/exampleController');
-
+const express = require("express");
 const router = express.Router();
+const exampleController = require("../controllers/exampleController");
 
-// Define a route to get examples
-router.get('/examples', exampleController.getExamples);
+// Get all examples
+router.get("/", exampleController.getExamples);
 
-// Define a route to create an example
-router.post('/examples', exampleController.createExample);
-
-// Define a route to get a specific example by ID
-router.get('/examples/:id', exampleController.getExampleById);
-
-// Define a route to update an example by ID
-router.put('/examples/:id', exampleController.updateExampleById);
-
-// Define a route to delete an example by ID
-router.delete('/examples/:id', exampleController.deleteExampleById);
+// Create a new example
+router.post("/", exampleController.createExample);
 
 module.exports = router;
