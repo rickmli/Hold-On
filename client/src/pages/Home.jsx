@@ -1,5 +1,12 @@
+import PageDescription from "../ui/PageDescription";
+
 function Home() {
-  return <div>Home</div>;
+  return (
+    <>
+      <PageDescription title="Home" description="Welcome to my blog." />
+      <span>Home</span>
+    </>
+  );
 }
 
 export default Home;

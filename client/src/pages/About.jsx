@@ -1,5 +1,12 @@
+import PageDescription from "../ui/PageDescription";
+
 function About() {
-  return <div>About</div>;
+  return (
+    <>
+      <PageDescription title="About" description="Everthing about me." />
+      <span>About</span>
+    </>
+  );
 }
 
 export default About;

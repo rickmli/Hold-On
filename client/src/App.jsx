@@ -17,11 +17,12 @@ function App() {
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          {/* todo change post to fetched data using react query */}
           <Route path="/post" element={<PostListPage />} />
           <Route path="/post/:postSlug" element={<PostDetailPage />} />
-          <Route path="/tag" element={<TagListPage />} />{" "}
-          <Route path="/tag/:tagName" element={<TagDetailPage />} />{" "}
-          <Route path="/archives" element={<ArchivesPage />} />{" "}
+          <Route path="/tag" element={<TagListPage />} />
+          <Route path="/tag/:tagName" element={<TagDetailPage />} />
+          <Route path="/archive" element={<ArchivesPage />} />
           <Route path="/search" element={<Search />} />
           <Route path="/*" element={<NotFound />} />
         </Route>

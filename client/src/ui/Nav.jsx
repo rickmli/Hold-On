@@ -1,14 +1,12 @@
 import NavItem from "./NavItem";
-
+import { NAVS as navs } from "../utils/constants";
 function Nav() {
   return (
     <nav>
       <ol className="flex space-x-4">
-        <NavItem route="/tag" routeName="Tags" />
-        <NavItem route="/about" routeName="About" />
-        <NavItem route="/post" routeName="Posts" />
-        <NavItem route="/search" routeName="Search" />
-        <NavItem route="/archives" routeName="Archives" />
+        {Object.values(navs).map((nav) => (
+          <NavItem key={nav.name} route={nav.linkTo} routeName={nav.name} />
+        ))}
       </ol>
     </nav>
   );

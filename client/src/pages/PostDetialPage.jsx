@@ -1,5 +1,13 @@
+import PostDetail from "../features/posts/PostDetail";
+import { generateFakePosts } from "../utils/helpers";
+
 function PostDetailPage() {
-  return <div>PostDetailPage</div>;
+  const fakePost = generateFakePosts(1)[0];
+  return (
+    <>
+      <PostDetail post={fakePost} />
+    </>
+  );
 }
 
 export default PostDetailPage;

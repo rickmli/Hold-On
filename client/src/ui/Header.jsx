@@ -8,7 +8,6 @@ function Header() {
         <h1 className="text-2xl font-bold">
           <Link to="/">Hold On</Link>
         </h1>
-
         <Nav />
       </div>
     </header>
