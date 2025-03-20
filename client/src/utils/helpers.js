@@ -38,4 +38,14 @@ const getPathnames = (pathname) => {
   return pathnames;
 };
 
-export { truncateText, getPathnames, generateFakePosts, generateFakeSentence };
+const capitalizeFirstLetter = function (str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+export {
+  truncateText,
+  getPathnames,
+  generateFakePosts,
+  generateFakeSentence,
+  capitalizeFirstLetter,
+};

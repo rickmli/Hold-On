@@ -1,3 +1,4 @@
+import Tags from "../../ui/Tags";
 import { truncateText } from "../../utils/helpers";
 
 function PostRow({ post }) {
@@ -15,16 +16,7 @@ function PostRow({ post }) {
           <h2 className="text-md font-semibold text-gray-800">
             {truncateText(post.title, 35)}
           </h2>
-
-          <ul className="flex gap-2">
-            {post.tags.map((tag, index) => {
-              return (
-                <li key={index} className="text-xs">
-                  {tag}
-                </li>
-              );
-            })}
-          </ul>
+          <Tags fontOption="xs" gapOption={2} tags={post.tags} />
         </div>
         <p className="text-xs text-gray-600">2024-05-06</p>
       </div>

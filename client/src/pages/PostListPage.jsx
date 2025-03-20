@@ -1,10 +1,11 @@
 import PostList from "../features/posts/PostList";
-import Breadscrumb from "../ui/Breadcrumb";
+import PageDescription from "../ui/PageDescription";
 
 function PostListPage() {
   return (
     <>
-      <PostList />;
+      <PageDescription title="Post" description="All articles I've posted." />
+      <PostList />
     </>
   );
 }

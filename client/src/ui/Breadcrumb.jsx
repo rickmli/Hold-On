@@ -5,6 +5,7 @@ import { ROUTES as routes } from "../utils/constants";
 function Breadcrumb() {
   const location = useLocation();
   const isNotFound = !matchRoutes(routes, location); // 检查是否匹配路由
+  const isHome = location.pathname === "/"; // 检查是否是首页
 
   if (isNotFound) return null; // 404 页面不显示 Breadcrumb
 
@@ -13,17 +14,23 @@ function Breadcrumb() {
 
   return (
     <nav
-      className="flex items-center text-sm font-medium"
+      className="mb-2 flex items-center text-sm font-medium"
       aria-label="Breadcrumb"
     >
       <ol className="flex items-center space-x-2">
         {/* 首页 */}
-        <li>
-          <Link to="/" className="text-gray-400 hover:text-gray-500">
-            Home
-          </Link>
+        <li className="flex items-center gap-2">
+          {isHome ? (
+            <span aria-current="page" className="text-gray-900">
+              Home
+            </span>
+          ) : (
+            <Link to="/" className="text-gray-400 hover:text-blue-400">
+              Home
+            </Link>
+          )}
+          {pathnames.length > 0 && <span>&gt;</span>}
         </li>
-        {pathnames.length > 0 && <span>&gt;</span>}
 
         {/* 生成面包屑 */}
         {pathnames.map((name, index) => {
@@ -31,7 +38,7 @@ function Breadcrumb() {
           const isLast = index === pathnames.length - 1;
 
           return (
-            <li key={routeTo} className="flex items-center">
+            <li key={routeTo} className="flex items-center gap-2">
               {isLast ? (
                 <span aria-current="page" className="text-gray-900">
                   {name}
@@ -40,7 +47,7 @@ function Breadcrumb() {
                 <>
                   <Link
                     to={routeTo}
-                    className="text-gray-400 hover:text-gray-500"
+                    className="text-gray-400 hover:text-blue-400"
                   >
                     {name}
                   </Link>

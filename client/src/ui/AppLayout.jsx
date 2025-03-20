@@ -8,12 +8,12 @@ function AppLayout() {
   return (
     <>
       <Header />
-      <div className="container mx-auto max-w-1/2">
-        <Breadcrumb />
-        <main>
+      <main>
+        <div className="container mx-auto my-8 max-w-1/2">
+          <Breadcrumb />
           <Outlet />
-        </main>
-      </div>
+        </div>
+      </main>
       <Footer />
     </>
   );
