@@ -13,17 +13,27 @@ function PostDetailPage() {
   return (
     <>
       <Back />
-      <div className="mx-auto max-w-3xl p-4">
+      <motion.div
+        className="z-20 mx-auto max-w-3xl rounded-lg bg-gray-100 p-6 shadow-md"
+        layoutId={`post-container-${post.slug}`} // Set layoutId for smooth transition
+        transition={{
+          duration: 0.8, // Adjust this to control the speed (in seconds)
+          ease: [0.25, 0.8, 0.25, 1], // Smooth ease-in-out transition
+        }}
+      >
         {/* 文章封面图 */}
         <motion.img
           src={post.image}
           alt={post.title}
-          className="mb-6 h-60 w-full scale-105 rounded-lg object-cover"
+          className="z-10 mb-6 h-60 w-full rounded-lg object-cover"
           layoutId={`post-image-${post.slug}`} // Set layoutId for smooth transition
           transition={{
             duration: 0.8, // Adjust this to control the speed (in seconds)
             ease: [0.25, 0.8, 0.25, 1], // Ease-in-out for smoother transition
+            delay: 0.05,
           }}
+          initial={{ filter: "blur(10px)" }} // Start with no blur
+          animate={{ filter: "blur(0px)" }} // Apply blur midway
         />
 
         {/* 让标题平滑过渡 */}
@@ -33,7 +43,10 @@ function PostDetailPage() {
           transition={{
             duration: 0.8, // Adjust this to control the speed (in seconds)
             ease: [0.25, 0.8, 0.25, 1], // Ease-in-out for smoother transition
+            delay: 0.05,
           }}
+          initial={{ filter: "blur(10px)" }} // Start with no blur
+          animate={{ filter: "blur(0px)" }} // Apply blur midway
         >
           {post.title}
         </motion.h1>
@@ -45,7 +58,7 @@ function PostDetailPage() {
 
         {/* 正文内容 */}
         <p className="leading-relaxed text-gray-700">{post.content}</p>
-      </div>
+      </motion.div>
     </>
   );
 }
