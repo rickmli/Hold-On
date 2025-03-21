@@ -1,5 +1,5 @@
-import { useLocation } from "react-router-dom";
 import { faker } from "@faker-js/faker";
+import dayjs from "dayjs";
 
 const generateFakeSentence = () => {
   return faker.lorem.sentence();
@@ -32,13 +32,25 @@ const truncateText = (text, maxLength) => {
   return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
 };
 
-const capitalizeFirstLetter = function (str) {
+const capitalize = function (str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+const getToday = () => {
+  const timestamp = new Date(); // 或者从 MongoDB 获取的 ISODate
+  const formattedDate = dayjs(timestamp).format("YYYY-MM-DD");
+  return formattedDate;
+};
+
+const formateDate = (date) => {
+  return dayjs(date).format("YYYY-MM-DD");
 };
 
 export {
   truncateText,
   generateFakePosts,
   generateFakeSentence,
-  capitalizeFirstLetter,
+  getToday,
+  formateDate,
+  capitalize,
 };

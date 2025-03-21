@@ -6,9 +6,16 @@ import { FAKEPOSTS as posts } from "../../utils/constants";
 
 function PostDetailPage() {
   const { postSlug } = useParams(); // Use postSlug from URL parameters to fetch the correct post
-  const post = posts.find((post) => post.slug === postSlug); // Find the post based on the slug
+  const {
+    title,
+    content,
+    tags,
+    image,
+    slug,
+    createdAt = formateDate(createdAt),
+  } = posts.find((post) => post.slug === postSlug); // Find the post based on the slug
 
-  if (!post) return <p>Post not found!</p>;
+  if (!title) return <p>Post not found!</p>;
 
   return (
     <>
@@ -31,14 +38,14 @@ function PostDetailPage() {
             delay: 0.05,
           }}
         >
-          {post.title}
+          {title}
         </motion.h1>
         {/* 文章封面图 */}
         <motion.img
-          src={post.image}
-          alt={post.title}
+          src={image}
+          alt={title}
           className="z-10 mb-6 h-60 w-full rounded-lg object-cover"
-          layoutId={`post-image-${post.slug}`} // Set layoutId for smooth transition
+          layoutId={`post-image-${slug}`} // Set layoutId for smooth transition
           transition={{
             duration: 0.8, // Adjust this to control the speed (in seconds)
             ease: [0.25, 0.8, 0.25, 1], // Ease-in-out for smoother transition
@@ -47,12 +54,12 @@ function PostDetailPage() {
         />
 
         <div className="mb-4 flex items-center justify-between text-sm text-gray-500">
-          <Tags tags={post.tags} gapOption={3} fontOption={"sm"} />
+          <Tags tags={tags} gapOption={3} fontOption={"sm"} />
           <time dateTime="2025-03-18">March 18, 2025</time>
         </div>
 
         {/* 正文内容 */}
-        <p className="leading-relaxed text-gray-700">{post.content}</p>
+        <p className="leading-relaxed text-gray-700">{content}</p>
       </motion.div>
     </>
   );

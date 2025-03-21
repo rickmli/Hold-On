@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import Tags from "../../ui/Tags";
-import { truncateText } from "../../utils/helpers";
+import { formateDate, truncateText } from "../../utils/helpers";
 
 function PostRow({ post }) {
+  const title = truncateText(post.title, 35);
+  const tags = post.tags;
+  const createdAt = formateDate(post.createdAt);
+  // const updatedAt = formateDate(post.updatedAt);
+
   return (
     <li className="group">
       {/* Apply group class here to manage hover on the entire li */}
@@ -26,11 +31,11 @@ function PostRow({ post }) {
                 ease: [0.25, 0.8, 0.25, 1], // Smooth ease-in-out transition
               }}
             >
-              {truncateText(post.title, 35)}
+              {title}
             </motion.h2>
-            <Tags fontOption="xs" gapOption={2} tags={post.tags} />
+            <Tags fontOption="xs" gapOption={2} tags={tags} />
           </div>
-          <p className="text-xs text-gray-600">2024-05-06</p>
+          <p className="text-xs text-gray-600">{createdAt}</p>
         </div>
       </motion.div>
     </li>

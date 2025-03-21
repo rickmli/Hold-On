@@ -2,12 +2,17 @@ import { Link, useLocation, matchRoutes } from "react-router-dom";
 import usePathnames from "../hooks/usePathname";
 import { ROUTES } from "../utils/constants";
 
-function breadcrumb() {
-  const routes = ROUTES;
+function Breadcrumb() {
+  const location = useLocation();
   const pathnames = usePathnames();
-  const isHome = pathnames.length === 0;
 
-  // if (isNotFound) return null; // 404 页面不显示 breadcrumb
+  // 判断是否是 /post 路径下的动态子路径
+  const isPostPage = matchRoutes(ROUTES, location.pathname)?.some(
+    (match) => match?.route?.path === "/post/:postSlug",
+  );
+
+  const isHome = pathnames.length === 0;
+  if (isPostPage) return null;
 
   return (
     <nav
@@ -34,6 +39,11 @@ function breadcrumb() {
           const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
           const isLast = index === pathnames.length - 1;
 
+          // 如果是 /post 页面，跳过 "post"
+          if (isPostPage && index === 1 && name === "post") {
+            return null; // 不渲染 /post
+          }
+
           return (
             <li key={routeTo} className="flex items-center gap-2">
               {isLast ? (
@@ -59,4 +69,4 @@ function breadcrumb() {
   );
 }
 
-export default breadcrumb;
+export default Breadcrumb;

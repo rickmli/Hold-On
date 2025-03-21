@@ -1,4 +1,4 @@
-import { capitalizeFirstLetter } from "../utils/helpers";
+import { capitalize } from "../utils/helpers";
 
 function Tags({ fontOption, gapOption, tags }) {
   const fontSizes = {
@@ -14,7 +14,7 @@ function Tags({ fontOption, gapOption, tags }) {
       {tags.map((tag, index) => {
         return (
           <li key={index} className={fontSizes[fontOption]}>
-            {capitalizeFirstLetter(tag)}
+            {capitalize(tag)}
           </li>
         );
       })}
