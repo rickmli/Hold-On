@@ -7,7 +7,7 @@ function breadcrumb() {
   const pathnames = usePathnames();
   const isHome = pathnames.length === 0;
 
-  if (isNotFound) return null; // 404 页面不显示 breadcrumb
+  // if (isNotFound) return null; // 404 页面不显示 breadcrumb
 
   return (
     <nav
