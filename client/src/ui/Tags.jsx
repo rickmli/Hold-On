@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { capitalize } from "../utils/helpers";
+import { capitalize, slugify } from "../utils/helpers";
 import clsx from "clsx";
 
 // 提取外部常量
@@ -73,7 +73,7 @@ function Tags({
         return (
           <li key={index} className="inline-flex">
             <Link
-              to={`/tag/${tagName}`}
+              to={`/tag/${slugify(tagName)}`}
               className="hover:text-black hover:underline"
             >
               <span

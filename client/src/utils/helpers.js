@@ -46,6 +46,13 @@ const formateDate = (date) => {
   return dayjs(date).format("YYYY-MM-DD");
 };
 
+function slugify(text) {
+  return text
+    .replaceAll(" ", "-") // 非字母数字替换为 -
+    .replace(/-+/g, "-") // 合并多个连续的 -
+    .replace(/^-+|-+$/g, ""); // 去掉头尾的 -
+}
+
 export {
   truncateText,
   generateFakePosts,
@@ -53,4 +60,5 @@ export {
   getToday,
   formateDate,
   capitalize,
+  slugify,
 };
