@@ -32,19 +32,12 @@ const truncateText = (text, maxLength) => {
   return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
 };
 
-const getPathnames = (pathname) => {
-  const location = useLocation();
-  const pathnames = location.pathname.split("/").filter((x) => x);
-  return pathnames;
-};
-
 const capitalizeFirstLetter = function (str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
 export {
   truncateText,
-  getPathnames,
   generateFakePosts,
   generateFakeSentence,
   capitalizeFirstLetter,

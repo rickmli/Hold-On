@@ -1,21 +1,18 @@
 import { Link, useLocation, matchRoutes } from "react-router-dom";
+import usePathnames from "../hooks/usePathname";
+import { ROUTES } from "../utils/constants";
 
-import { ROUTES as routes } from "../utils/constants";
+function breadcrumb() {
+  const routes = ROUTES;
+  const pathnames = usePathnames();
+  const isHome = pathnames.length === 0;
 
-function Breadcrumb() {
-  const location = useLocation();
-  const isNotFound = !matchRoutes(routes, location); // 检查是否匹配路由
-  const isHome = location.pathname === "/"; // 检查是否是首页
-
-  if (isNotFound) return null; // 404 页面不显示 Breadcrumb
-
-  // 解析路径
-  const pathnames = location.pathname.split("/").filter(Boolean);
+  if (isNotFound) return null; // 404 页面不显示 breadcrumb
 
   return (
     <nav
       className="mb-2 flex items-center text-sm font-medium"
-      aria-label="Breadcrumb"
+      aria-label="breadcrumb"
     >
       <ol className="flex items-center space-x-2">
         {/* 首页 */}
@@ -62,4 +59,4 @@ function Breadcrumb() {
   );
 }
 
-export default Breadcrumb;
+export default breadcrumb;

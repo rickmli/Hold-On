@@ -47,6 +47,7 @@ const ROUTES = [
   { path: "/tag/:tagName" },
   { path: "/archive" },
   { path: "/search" },
+  { path: "*" },
 ];
 
 const FAKEPOSTS = [
