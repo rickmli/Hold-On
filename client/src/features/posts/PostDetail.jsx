@@ -2,9 +2,10 @@ import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import Back from "../../ui/Back";
 import Tags from "../../ui/Tags";
-import { FAKEPOSTS as posts } from "../../utils/constants";
+import { FAKEPOSTS } from "../../utils/fakeData";
 
 function PostDetailPage() {
+  const posts = FAKEPOSTS;
   const { postSlug } = useParams(); // Use postSlug from URL parameters to fetch the correct post
   const {
     title,

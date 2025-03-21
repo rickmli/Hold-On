@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const postSchema = new mongoose.Schema(
+const tagSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -14,10 +14,14 @@ const postSchema = new mongoose.Schema(
         require: true,
       },
     ],
+    color: {
+      type: String,
+      default: "gray",
+    },
   },
   { timestamps: true }
 );
 
-const Post = mongoose.model("Post", postSchema);
+const Tag = mongoose.model("Tag", tagSchema);
 
-export default Post;
+export default Tag;

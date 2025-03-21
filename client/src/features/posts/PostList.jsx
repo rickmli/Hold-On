@@ -1,9 +1,11 @@
 import React from "react";
 import PostRow from "./PostRow";
 import { Link } from "react-router-dom";
-import { FAKEPOSTS as posts } from "../../utils/constants";
+import { FAKEPOSTS } from "../../utils/fakeData";
 
 const PostList = () => {
+  const posts = FAKEPOSTS;
+
   return (
     <ul className="flex flex-col space-y-3">
       {posts.map((post, index) => (
