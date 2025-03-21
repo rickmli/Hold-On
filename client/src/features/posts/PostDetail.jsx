@@ -55,7 +55,14 @@ function PostDetailPage() {
         />
 
         <div className="mb-4 flex items-center justify-between text-sm text-gray-500">
-          <Tags tags={tags} gapOption={3} fontOption={"sm"} />
+          <Tags
+            fontSizeOption="lg"
+            gapSizeOption={2}
+            tags={tags}
+            paddingOption="2"
+            useBgColor={true}
+            useFontColor={false}
+          />
           <time dateTime="2025-03-18">March 18, 2025</time>
         </div>
 

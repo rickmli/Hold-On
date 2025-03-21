@@ -7,7 +7,14 @@ function TagListPage() {
   return (
     <>
       <RouteDescription title="Tags" description="List of all tags." />
-      <Tags tags={tags} />
+      <Tags
+        fontSizeOption="md"
+        gapSizeOption={3}
+        tags={tags}
+        paddingOption="4"
+        useBgColor={true}
+        useFontColor={false}
+      />
     </>
   );
 }

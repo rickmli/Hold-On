@@ -33,7 +33,15 @@ function PostRow({ post }) {
             >
               {title}
             </motion.h2>
-            <Tags fontOption="xs" gapOption={2} tags={tags} />
+            <Tags
+              fontSizeOption="xs"
+              gapSizeOption={1}
+              tags={tags}
+              paddingOption="0"
+              bgColorOption="none"
+              useBgColor={false}
+              useFontColor={true}
+            />
           </div>
           <p className="text-xs text-gray-600">{createdAt}</p>
         </div>
