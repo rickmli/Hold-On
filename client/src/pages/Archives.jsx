@@ -1,9 +1,9 @@
-import PageDescription from "../ui/PageDescription";
+import RouteDescription from "../ui/RouteDescription";
 
 function ArchivesPage() {
   return (
     <>
-      <PageDescription
+      <RouteDescription
         title="Archives"
         description="Archives of all posts posted."
       />

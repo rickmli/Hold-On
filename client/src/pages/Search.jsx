@@ -1,9 +1,9 @@
-import PageDescription from "../ui/PageDescription";
+import RouteDescription from "../ui/RouteDescription";
 
 function Search() {
   return (
     <>
-      <PageDescription title="Search" description="Search for articles." />
+      <RouteDescription title="Search" description="Search for articles." />
       <span>Search</span>
     </>
   );

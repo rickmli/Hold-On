@@ -1,9 +1,9 @@
-import PageDescription from "../ui/PageDescription";
+import RouteDescription from "../ui/RouteDescription";
 
 function About() {
   return (
     <>
-      <PageDescription title="About" description="Everthing about me." />
+      <RouteDescription title="About" description="Everthing about me." />
       <span>About</span>
     </>
   );

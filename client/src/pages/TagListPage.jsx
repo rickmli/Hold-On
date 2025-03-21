@@ -1,9 +1,9 @@
-import PageDescription from "../ui/PageDescription";
+import RouteDescription from "../ui/RouteDescription";
 
 function TagListPage() {
   return (
     <>
-      <PageDescription title="Tags" description="List of all tags." />
+      <RouteDescription title="Tags" description="List of all tags." />
       <span>Tags</span>
     </>
   );

@@ -1,4 +1,4 @@
-function PageDescription({ title, description }) {
+function RouteDescription({ title, description }) {
   return (
     <div className="mb-6 flex flex-col space-y-1">
       <h2 className="text-2xl">{title}</h2>
@@ -7,4 +7,4 @@ function PageDescription({ title, description }) {
   );
 }
 
-export default PageDescription;
+export default RouteDescription;

@@ -15,12 +15,24 @@ function PostDetailPage() {
       <Back />
       <motion.div
         className="z-20 mx-auto max-w-3xl rounded-lg bg-gray-100 p-6 shadow-md"
-        layoutId={`post-container-${post.slug}`} // Set layoutId for smooth transition
+        // layoutId={`post-container-${post.slug}`} // Set layoutId for smooth transition
         transition={{
           duration: 0.8, // Adjust this to control the speed (in seconds)
           ease: [0.25, 0.8, 0.25, 1], // Smooth ease-in-out transition
         }}
       >
+        {/* 让标题平滑过渡 */}
+        <motion.h1
+          // layoutId={`post-title-${post.slug}`}
+          className="mb-2 text-3xl font-bold text-emerald-700"
+          transition={{
+            duration: 0.8, // Adjust this to control the speed (in seconds)
+            ease: [0.25, 0.8, 0.25, 1], // Ease-in-out for smoother transition
+            delay: 0.05,
+          }}
+        >
+          {post.title}
+        </motion.h1>
         {/* 文章封面图 */}
         <motion.img
           src={post.image}
@@ -32,24 +44,7 @@ function PostDetailPage() {
             ease: [0.25, 0.8, 0.25, 1], // Ease-in-out for smoother transition
             delay: 0.05,
           }}
-          initial={{ filter: "blur(10px)" }} // Start with no blur
-          animate={{ filter: "blur(0px)" }} // Apply blur midway
         />
-
-        {/* 让标题平滑过渡 */}
-        <motion.h1
-          layoutId={`post-title-${post.slug}`}
-          className="mb-2 text-3xl font-bold text-emerald-700"
-          transition={{
-            duration: 0.8, // Adjust this to control the speed (in seconds)
-            ease: [0.25, 0.8, 0.25, 1], // Ease-in-out for smoother transition
-            delay: 0.05,
-          }}
-          initial={{ filter: "blur(10px)" }} // Start with no blur
-          animate={{ filter: "blur(0px)" }} // Apply blur midway
-        >
-          {post.title}
-        </motion.h1>
 
         <div className="mb-4 flex items-center justify-between text-sm text-gray-500">
           <Tags tags={post.tags} gapOption={3} fontOption={"sm"} />

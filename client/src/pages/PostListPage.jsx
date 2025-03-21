@@ -1,10 +1,10 @@
 import PostList from "../features/posts/PostList";
-import PageDescription from "../ui/PageDescription";
+import RouteDescription from "../ui/RouteDescription";
 
 function PostListPage() {
   return (
     <>
-      <PageDescription title="Post" description="All articles I've posted." />
+      <RouteDescription title="Post" description="All articles I've posted." />
       <PostList />
     </>
   );

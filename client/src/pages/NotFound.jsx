@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import PageDescription from "../ui/PageDescription";
+import RouteDescription from "../ui/RouteDescription";
 
 function NotFound() {
   return (
     <>
-      <PageDescription
+      <RouteDescription
         title="404 Page Not Found"
         description="This page cannot be found, please try another time"
       />
